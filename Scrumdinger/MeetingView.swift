@@ -30,7 +30,7 @@ struct MeetingView: View {
         .onDisappear {
             scrumTimer.stopScrum() //from
         }
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.inline) 
     }
 }
 
