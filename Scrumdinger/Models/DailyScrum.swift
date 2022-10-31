@@ -40,6 +40,13 @@ extension DailyScrum {
         Data(title: title, attendees: attendees, lengthInMinutes: Double(lengthInMinutes), theme: theme)
     //Add a computed data property that returns Data with the DailyScrum property values.
     }
+    mutating func update(from data: Data) {
+        title = data.title
+        attendees = data.attendees
+        lengthInMinutes = Int(data.lengthInMinutes)
+        theme = data.theme
+    }
+
 }
 
 extension DailyScrum {
