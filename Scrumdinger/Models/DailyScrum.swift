@@ -30,6 +30,16 @@ extension DailyScrum {
             self.name = name
         }
     }
+    struct Data {
+        var title : String = " " // 각 데이터 초기화
+        var attendees : [Attendee] = []
+        var lengthInMinutes : Double = 5
+        var theme : Theme = .seafoam
+    }
+    var data: Data {
+        Data(title: title, attendees: attendees, lengthInMinutes: Double(lengthInMinutes), theme: theme)
+    //Add a computed data property that returns Data with the DailyScrum property values.
+    }
 }
 
 extension DailyScrum {
