@@ -6,15 +6,15 @@ struct MeetingView: View {
     @StateObject var scrumTimer = ScrumTimer()
     
     private var player: AVPlayer { AVPlayer.sharedDingPlayer }
-
+    
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 16.0)
+            RoundedRectangle(cornerRadius: 16)
                 .fill(scrum.theme.mainColor)
             VStack {
                 MeetingHeaderView(secondsElapsed: scrumTimer.secondsElapsed, secondsRemaining: scrumTimer.secondsRemaining, theme: scrum.theme)
                 Circle()
-                    .strokeBorder(lineWidth: 24, antialiased: true)
+                    .strokeBorder(lineWidth: 24)
                 MeetingFooterView(speakers: scrumTimer.speakers, skipAction: scrumTimer.skipSpeaker)
             }
         }
@@ -22,15 +22,18 @@ struct MeetingView: View {
         .foregroundColor(scrum.theme.accentColor)
         .onAppear {
             scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendees: scrum.attendees)
-                        scrumTimer.speakerChangedAction = {
-                            player.seek(to: .zero) // 타이머 이용할 때마다 시간을 0으로 초기화 해주는 역할을 함
-                            player.play()
-                        }
+            scrumTimer.speakerChangedAction = {
+                player.seek(to: .zero)
+                player.play()
+            }
+            scrumTimer.startScrum()
         }
         .onDisappear {
-            scrumTimer.stopScrum() //from
+            scrumTimer.stopScrum()
+            let newHistory = History(attendees: scrum.attendees, lengthInMinutes: scrum.timer.secondsElapsed / 60)
+            scrum.history.insert(newHistory, at: 0)
         }
-        .navigationBarTitleDisplayMode(.inline) 
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

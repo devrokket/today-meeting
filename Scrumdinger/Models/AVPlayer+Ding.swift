@@ -7,4 +7,3 @@ extension AVPlayer {
         return AVPlayer(url: url)
     }()
 }
-

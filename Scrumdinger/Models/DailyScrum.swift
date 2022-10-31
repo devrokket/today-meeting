@@ -1,7 +1,3 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-*/
-
 import Foundation
 
 struct DailyScrum: Identifiable {
@@ -10,43 +6,53 @@ struct DailyScrum: Identifiable {
     var attendees: [Attendee]
     var lengthInMinutes: Int
     var theme: Theme
+    var history: [History] = []
     
     init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, theme: Theme) {
-            self.id = id
-            self.title = title
+        self.id = id
+        self.title = title
         self.attendees = attendees.map { Attendee(name: $0) }
-            self.lengthInMinutes = lengthInMinutes
-            self.theme = theme
-        }
+        self.lengthInMinutes = lengthInMinutes
+        self.theme = theme
+    }
 }
 
 extension DailyScrum {
     struct Attendee: Identifiable {
-        let id:UUID
+        let id: UUID
         var name: String
         
-        init(id: UUID = UUID(), name: String){
+        init(id: UUID = UUID(), name: String) {
             self.id = id
             self.name = name
         }
     }
+    
     struct Data {
-        var title : String = " " // 각 데이터 초기화
-        var attendees : [Attendee] = []
-        var lengthInMinutes : Double = 5
-        var theme : Theme = .seafoam
+        var title: String = ""
+        var attendees: [Attendee] = []
+        var lengthInMinutes: Double = 5
+        var theme: Theme = .seafoam
     }
+    
     var data: Data {
         Data(title: title, attendees: attendees, lengthInMinutes: Double(lengthInMinutes), theme: theme)
-    //Add a computed data property that returns Data with the DailyScrum property values.
     }
+    
     mutating func update(from data: Data) {
         title = data.title
         attendees = data.attendees
         lengthInMinutes = Int(data.lengthInMinutes)
         theme = data.theme
     }
-
+    
+    init(data: Data) {
+        id = UUID()
+        title = data.title
+        attendees = data.attendees
+        lengthInMinutes = Int(data.lengthInMinutes)
+        theme = data.theme
+    }
 }
 
 extension DailyScrum {
