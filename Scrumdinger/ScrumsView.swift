@@ -16,7 +16,7 @@ struct ScrumsView: View {
                 .listRowBackground(scrum.theme.mainColor)
             }
         }
-        .navigationTitle("Daily Scrums")
+        .navigationTitle("오늘의 회의")
         .toolbar {
             Button(action: {
                 isPresentingNewScrumView = true
