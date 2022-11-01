@@ -1,5 +1,5 @@
-# Displaying Data in a List
+# 오늘의 회의
 
-## Starting Project
+## : 그 날의 회의를 생성하고 진행할 수 있도록 관리하는 어플
 
-Use this project to code along with [Displaying Data in a List](https://developer.apple.com/tutorials/app-dev-training/displaying-data-in-a-list).
+<img src="./Desktop/DailyConference.png">
