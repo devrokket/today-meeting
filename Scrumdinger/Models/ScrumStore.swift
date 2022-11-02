@@ -12,6 +12,20 @@ class ScrumStore: ObservableObject {
                                         create: false)
         .appendingPathComponent("scrums.data")
     }
+    
+    static func load() async throws -> [DailyScrum] {
+        try await withCheckedThrowingContinuation{ continuation in
+            load { result in
+                switch result {
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                case .success(let scrums):
+                    continuation.resume(returning: scrums)
+                }
+            }
+
+        } // 이건 closure(클로져, 함수 보다 간단)다.
+    }
     //ScrumStore.view에서는 load함수, store 함수를 만들어 데이터를 저장 및 로드.
     static func load(completion: @escaping (Result<[DailyScrum], Error>)->Void) {
         DispatchQueue.global(qos: .background).async {
@@ -35,6 +49,22 @@ class ScrumStore: ObservableObject {
             }
         }
     }
+    
+    @discardableResult
+    static func save(scrums: [DailyScrum]) async throws -> Int {
+        try await withCheckedThrowingContinuation { continuation in
+            save(scrums: scrums) { result in
+                switch result {
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                case .success(let scrumsSaved):
+                    continuation.resume(returning: scrumsSaved)
+                }
+            }
+        }
+    }
+    
+    
     static func save(scrums: [DailyScrum], completion: @escaping (Result<Int, Error>)->Void) {
         DispatchQueue.global(qos: .background).async {
             do {
