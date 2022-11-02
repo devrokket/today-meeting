@@ -31,6 +31,7 @@
 		BB55C6392912385800AE9E5F /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB55C6382912385800AE9E5F /* ErrorWrapper.swift */; };
 		BB55C63B2912394A00AE9E5F /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB55C63A2912394A00AE9E5F /* ErrorView.swift */; };
 		BB55C63D2912539400AE9E5F /* MeetingTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB55C63C2912539400AE9E5F /* MeetingTimerView.swift */; };
+		BB55C63F2912597300AE9E5F /* SpeakerArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB55C63E2912597300AE9E5F /* SpeakerArc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		BB55C6382912385800AE9E5F /* ErrorWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorWrapper.swift; sourceTree = "<group>"; };
 		BB55C63A2912394A00AE9E5F /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		BB55C63C2912539400AE9E5F /* MeetingTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTimerView.swift; sourceTree = "<group>"; };
+		BB55C63E2912597300AE9E5F /* SpeakerArc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerArc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				BB1799F7290FF25E003BC0D7 /* MeetingFooterView.swift */,
 				BB55C63A2912394A00AE9E5F /* ErrorView.swift */,
 				BB55C63C2912539400AE9E5F /* MeetingTimerView.swift */,
+				BB55C63E2912597300AE9E5F /* SpeakerArc.swift */,
 			);
 			path = Scrumdinger;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				7CB413DF26EA824100544BA7 /* ScrumdingerApp.swift in Sources */,
 				BB1799F2290FE9C7003BC0D7 /* ScrumProgressView.swift in Sources */,
 				BB37DFD1290FB391006DE347 /* ThemeView.swift in Sources */,
+				BB55C63F2912597300AE9E5F /* SpeakerArc.swift in Sources */,
 				7CB413F526EAC55200544BA7 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
