@@ -30,6 +30,7 @@
 		BB55623E29116BA00038D87A /* ScrumStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB55623D29116BA00038D87A /* ScrumStore.swift */; };
 		BB55C6392912385800AE9E5F /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB55C6382912385800AE9E5F /* ErrorWrapper.swift */; };
 		BB55C63B2912394A00AE9E5F /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB55C63A2912394A00AE9E5F /* ErrorView.swift */; };
+		BB55C63D2912539400AE9E5F /* MeetingTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB55C63C2912539400AE9E5F /* MeetingTimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		BB55623D29116BA00038D87A /* ScrumStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumStore.swift; sourceTree = "<group>"; };
 		BB55C6382912385800AE9E5F /* ErrorWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorWrapper.swift; sourceTree = "<group>"; };
 		BB55C63A2912394A00AE9E5F /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		BB55C63C2912539400AE9E5F /* MeetingTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				BB1799F1290FE9C7003BC0D7 /* ScrumProgressView.swift */,
 				BB1799F7290FF25E003BC0D7 /* MeetingFooterView.swift */,
 				BB55C63A2912394A00AE9E5F /* ErrorView.swift */,
+				BB55C63C2912539400AE9E5F /* MeetingTimerView.swift */,
 			);
 			path = Scrumdinger;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				BB1799F6290FEAAF003BC0D7 /* AVPlayer+Ding.swift in Sources */,
 				BB1799F8290FF25E003BC0D7 /* MeetingFooterView.swift in Sources */,
 				BB1799F0290FE2FB003BC0D7 /* MeetingHeaderView.swift in Sources */,
+				BB55C63D2912539400AE9E5F /* MeetingTimerView.swift in Sources */,
 				BB37DFCF290FA89D006DE347 /* DetailEditView.swift in Sources */,
 				BB55C6392912385800AE9E5F /* ErrorWrapper.swift in Sources */,
 				7CB413F726EAC76E00544BA7 /* TrailingIconLabelStyle.swift in Sources */,
