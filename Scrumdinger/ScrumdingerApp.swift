@@ -3,6 +3,7 @@ import SwiftUI
 @main
 struct ScrumdingerApp: App {
     @StateObject private var store = ScrumStore()
+    @State private var errorWrapper: ErrorWrapper?
     
     var body: some Scene {
         WindowGroup {
@@ -12,7 +13,7 @@ struct ScrumdingerApp: App {
                         do {
                             try await ScrumStore.save(scrums: store.scrums)
                         } catch {
-                                fatalError("saving scrums에서 에러 발견!")
+                            errorWrapper = ErrorWrapper(error: error, guidance: "잠시 뒤에 다시 시도하세요")
                         }
                     }
                 }
@@ -21,10 +22,15 @@ struct ScrumdingerApp: App {
                 do {
                     store.scrums = try await ScrumStore.load()
                 } catch {
-                    fatalError("loading scrums에서 에러 발견!")
-                    }
+                    errorWrapper = ErrorWrapper(error: error, guidance: "Scrumdinger will load sample data and continue.")
                 }
+            }
+            .sheet(item: $errorWrapper, onDismiss: {
+                store.scrums = DailyScrum.sampleData
+            }) { wrapper in
+                ErrorView(errorWrapper: wrapper)
             }
         }
     }
+}
 
